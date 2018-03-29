@@ -8,4 +8,7 @@ var letters = ["a", "b", "c", "d", "e", "f", "g","h", "i", "j", "k", "l", "m", "
 
 // computer random function input should be set
 
-var letterToBeGuessed = letters[Math.floor(math.random())]
+var letterToBeGuessed = letters[Math.floor(Math.random() * letters.length)];
+
+// document key function for computer
+
