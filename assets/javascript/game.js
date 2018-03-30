@@ -11,15 +11,13 @@ var letterToBeGuessed = letters[Math.floor(Math.random() * letters.length)];
 
 // document key function for computer
 
-document.onekey = function function(event){
+document.onekey = function(event){
   
 var userGuess = String.fromChartCode(event.keyCode).toLowerCase(); {
     if (guessesSoFar.indexOf(userGuess) < 0 && letters.indexOf(userGuess) >= 0) {
 		guessesSoFar[guessesSoFar.length]=userGuess;
-		// if it is a new letter then decrease remaining guesses by 1
 		guessesLeft--;
-
-}
+    };
 
     if (letterToBeGuessed == userGuess) {
     wins++;
@@ -28,4 +26,14 @@ var userGuess = String.fromChartCode(event.keyCode).toLowerCase(); {
     guessesSoFar = [];
     letterToBeGuessed = letters[Math.floor(Math.random() * alphabetLetters.length)];
     console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + letterToBeGuessed);
+    };
+
+    if (guessesLeft == 0) {
+		losses++;
+		console.log("You lost!");
+		guessesLeft = 9;
+		guessesSoFar = [];
+		letterToBeGuessed = letters[Math.floor(Math.random() * alphabetLetters.length)];
+		console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + letterToBeGuessed);
+	};
 
