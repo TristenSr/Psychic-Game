@@ -4,10 +4,19 @@ var letters = ["a", "b", "c", "d", "e", "f", "g","h", "i", "j", "k", "l", "m", "
     var guessesLeft = 0;
     var guessesSoFar = 0;
     var userGuess = null;    
+
 // computer random function input should be set
 var letterToBeGuessed = letters[Math.floor(Math.random() * letters.length)];
-console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + letterToBeGuessed);
+    console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + lettersToBeGuessed);
+
 // document key function for computer
-document.onekey = function function(event) {
-var userGuess = String.fromChartCode(event.keyCode).toLowerCase();
+
+document.onekey = function function(event){
+  
+var userGuess = String.fromChartCode(event.keyCode).toLowerCase(); {
+    if (guessesSoFar.indexOf(userGuess) < 0 && letters.indexOf(userGuess) >= 0) {
+		guessesSoFar[guessesSoFar.length]=userGuess;
+		// if it is a new letter then decrease remaining guesses by 1
+		guessesLeft--;
+
 }
