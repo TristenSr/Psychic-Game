@@ -20,3 +20,12 @@ var userGuess = String.fromChartCode(event.keyCode).toLowerCase(); {
 		guessesLeft--;
 
 }
+
+    if (letterToBeGuessed == userGuess) {
+    wins++;
+    console.log("You won!");
+    guessesLeft = 9;
+    guessesSoFar = [];
+    letterToBeGuessed = letters[Math.floor(Math.random() * alphabetLetters.length)];
+    console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + letterToBeGuessed);
+
